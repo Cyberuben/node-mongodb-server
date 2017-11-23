@@ -14,7 +14,7 @@ var auth = require('../auth/authentication');
 // 	 - als user gevonden en password matcht, dan return valide token
 //   - anders is de inlogpoging gefaald - geef foutmelding terug.
 //
-router.post('/login', function(req, res) {
+router.post('/login', (req, res) => {
 
     // Even kijken wat de inhoud is
     // console.dir(req.body);
