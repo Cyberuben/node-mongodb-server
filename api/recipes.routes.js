@@ -41,4 +41,22 @@ router.route("/:recipeId")
 			})
 	});
 
+router.route("/:recipeId/favorites")
+	.put((req, res, next) => {
+		Recipe.findByIdAndUpdate( { _id: req.params.recipeId }, { favorite: true })
+			.exec()
+			.then((recipe) => {
+				res.json(recipe);
+			})
+			.catch(next);
+	})
+	.delete((req, res, next) => {
+		Recipe.findByIdAndUpdate( { _id: req.params.recipeId }, { favorite: false })
+			.exec()
+			.then((recipe) => {
+				res.json(recipe);
+			})
+			.catch(next);
+	});
+
 module.exports = router;

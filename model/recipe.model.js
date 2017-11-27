@@ -8,7 +8,7 @@ const RecipeSchema = new Schema({
     },
     description: String,
     imagePath: String,
-    time: String,
+    favorite: Boolean,
     ingredients: [{
         name: String,
         amount: Number
