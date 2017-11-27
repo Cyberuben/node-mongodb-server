@@ -32,6 +32,7 @@ app.use((req, res, next) => {
 });
 
 app.use("/recipes", require("./api/recipes.routes"));
+app.use("/favorites", require("./api/favorites.routes"));
 
 app.use((err, req, res, next) => {
 	var error = {
@@ -53,7 +54,7 @@ app.use("*", (req, res) => {
 
 app.listen(config.env.webPort, () => {
 	console.log("De server luistert op port " + app.get("port"));
-	console.log("Zie bijvoorbeeld http://localhost:3000/api/v1/users");
+	console.log("Zie bijvoorbeeld http://localhost:3100/recipes");
 });
 
 // Voor testen met mocha/chai moeten we de app exporteren.
