@@ -28,10 +28,10 @@ router.route("/:itemId")
 			.catch(next);
 	})
 	.delete((req, res, next) => {
-		ShoppingList.findByIdAndUpdate( { _id: req.params.itemId }, req.body)
+		ShoppingList.findByIdAndRemove( { _id: req.params.itemId } )
 			.exec()
 			.then((shoppingList) => {
-				res.json(shoppingList);
+				res.status(200);
 			})
 			.catch(next);
 	});
