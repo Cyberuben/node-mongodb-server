@@ -33,6 +33,7 @@ app.use((req, res, next) => {
 
 app.use("/recipes", require("./api/recipes.routes"));
 app.use("/favorites", require("./api/favorites.routes"));
+app.use("/shopping-list", require("./api/shopping-list.routes"));
 
 app.use((err, req, res, next) => {
 	var error = {

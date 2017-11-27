@@ -41,7 +41,7 @@ router.route("/:recipeId")
 			})
 	});
 
-router.route("/:recipeId/favorites")
+router.route("/:recipeId/favorite")
 	.put((req, res, next) => {
 		Recipe.findByIdAndUpdate( { _id: req.params.recipeId }, { favorite: true })
 			.exec()
