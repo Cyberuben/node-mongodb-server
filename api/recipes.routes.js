@@ -11,12 +11,7 @@ router.route("/")
 			.catch(next);
 	})
 	.post((req, res, next) => {
-		var recipe = new Recipe({
-			name: req.body.name,
-			description: req.body.description,
-			imagePath: req.body.imagePath,
-			ingredients: req.body.ingredients
-		}).save()
+		var recipe = new Recipe(req.body).save()
 		.then((recipe) => {
 			res.status(200).json(recipe);
 		})
