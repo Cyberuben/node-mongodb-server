@@ -11,7 +11,7 @@ router.route("/")
 			.catch(next);
 	})
 	.post((req, res, next) => {
-		var shoppingList = new ShoppingList(req.body).save()
+		ShoppingList.insertMany(req.body)
 		.then((shoppingList) => {
 			res.status(200).json(shoppingList);
 		})
